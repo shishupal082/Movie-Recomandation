@@ -48,4 +48,11 @@ public class Parsing {
 		}
 		return movieIdList;
 	}
+	
+	public List<Integer> getRatingList(List<Integer> movieIdList){
+		
+		ArrayList<Integer> ratingList = new ArrayList<Integer> ();
+		
+		return ratingList;
+	}
 }
