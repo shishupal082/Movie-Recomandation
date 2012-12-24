@@ -14,7 +14,7 @@ public class Parsing {
 		genreId = in.nextInt();
 		return genreId;
 	}
-
+	//It contains the all movies data
 	public Map<Integer, Movie> getMovieData() {
 		Map<Integer, Movie> movieData = new HashMap<Integer, Movie>();
 
@@ -52,6 +52,8 @@ public class Parsing {
 	public List<Integer> getRatingList(List<Integer> movieIdList){
 		
 		ArrayList<Integer> ratingList = new ArrayList<Integer> ();
+		// temprory variable movie id
+		int x = 1;
 		
 		return ratingList;
 	}
