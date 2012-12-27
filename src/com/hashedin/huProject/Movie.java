@@ -1,27 +1,28 @@
 package com.hashedin.huProject;
-import java.util.Arrays;
 
+import java.util.ArrayList;
 
 public class Movie {
-	
+
 	private int movieId;
 	private String movieTitle;
-	private String releaseDate;
-	private int[] genre;
-	
-	public Movie(int movieId, String movieTitle, String releaseDate, int[] genre) {
-		super();
-		this.movieId = movieId;
-		this.movieTitle = movieTitle;
-		this.releaseDate = releaseDate;
-		this.genre = genre;
-	}
+	private String date;
+
+	private ArrayList<Genre> genreobj;
 
 	@Override
 	public String toString() {
-		return "Movie [movieId=" + movieId + ", movieTitle=" + movieTitle
-				+ ", releaseDate=" + releaseDate + ", genre="
-				+ Arrays.toString(genre) + "]";
+		return "movieId= " + movieId + ", movieTitle= " + movieTitle
+				+ ", date= " + date + ", genre= " + genreobj;
+	}
+
+	public Movie(int movieId, String movieTitle, String date,
+			ArrayList<Genre> genreobj) {
+		super();
+		this.movieId = movieId;
+		this.movieTitle = movieTitle;
+		this.date = date;
+		this.genreobj = genreobj;
 	}
 
 	public int getMovieId() {
@@ -40,21 +41,19 @@ public class Movie {
 		this.movieTitle = movieTitle;
 	}
 
-	public String getReleaseDate() {
-		return releaseDate;
+	public String getDate() {
+		return date;
 	}
 
-	public void setReleaseDate(String releaseDate) {
-		this.releaseDate = releaseDate;
+	public void setDate(String date) {
+		this.date = date;
 	}
 
-	public int[] getGenre() {
-		return genre;
+	public ArrayList<Genre> getGenreobj() {
+		return genreobj;
 	}
 
-	public void setGenre(int[] genre) {
-		this.genre = genre;
+	public void setGenreobj(ArrayList<Genre> genreobj) {
+		this.genreobj = genreobj;
 	}
-	
-	
 }
