@@ -8,6 +8,9 @@ import java.util.Map;
 public class HardCodedDatabase implements MovieRecommenderDBInterface {
 
 	@Override
+	/**
+	 * It craetes Hardcoded Map of Movie
+	 */
 	public Map<Integer, Movie> getMovieMap() {
 		Map<Integer, Movie> movieMap = new HashMap<Integer, Movie>();
 
@@ -35,6 +38,10 @@ public class HardCodedDatabase implements MovieRecommenderDBInterface {
 	}
 
 	@Override
+	/**
+	 * It craetes Hardcoded Map of User
+	 * 
+	 */
 	public Map<Integer, User> getUserMap() {
 		Map<Integer, User> userMap = new HashMap<Integer, User>();
 		User user1 = new User(1, 20, 'M',"Engineer");
@@ -49,11 +56,14 @@ public class HardCodedDatabase implements MovieRecommenderDBInterface {
 	}
 
 	@Override
+	/**
+	 * It craetes Hardcoded List of Rating
+	 */
 	public List<Rating> getRatingList() {
 		List<Rating> ratingList = new ArrayList<Rating>();
-		Rating ratingObj1 = new Rating(1, 1, 2,1995);
+		Rating ratingObj1 = new Rating(1, 3, 2,1995);
 		Rating ratingObj2 = new Rating(1, 2, 3,2000);
-		Rating ratingObj3 = new Rating(2, 3, 5,2002);
+		Rating ratingObj3 = new Rating(2, 2, 5,2002);
 
 		ratingList.add(ratingObj1);
 		ratingList.add(ratingObj2);

@@ -13,7 +13,9 @@ public class MovieBuff {
 	public MovieBuff(MovieRecommenderDBInterface db) {
 		this.movieDb = db;
 	}
-	
+	/**
+	 * @return String = It returns the Most Watch movie
+	 */
 	public String getMostWatchedMovieName() {
 		
 		List<Rating> ratingListObj = new ArrayList<Rating>();
@@ -22,12 +24,10 @@ public class MovieBuff {
 		
 		Integer watchedCount [] = new Integer [8];
 
-		System.out.println(ratingListObj.size());
 		
 		for(int t = 0 ; t < watchedCount.length ; t++){
 			watchedCount[ t ] = 0;
 		}
-		System.out.println(watchedCount[0]);
 		for(int t = 0 ; t < ratingListObj.size() ; t++){
 			
 			watchedCount [ ratingListObj.get(t).getMovieId() ] += 1; 
@@ -45,15 +45,15 @@ public class MovieBuff {
 		
 		return movieDb.getMovieMap().get(mostWatchedMovie).getMovieTitle();
 	}
-	
+	/**
+	 * @return Integer List = It return the List of Movie Id That contains the Input Genre Id
+	 */
 	public List<Integer> getMovieIdListByGenre() {
 		
 		Scanner in1 = new Scanner(System.in);
 		int genreInput;
-		System.out.println("Enter genre ID e.g 0 1 2 3 \t");
+		System.out.println("Enter genre ID e.g 1 2 3 ....\t");
 		genreInput = in1.nextInt();
-		
-		Map<Integer,ArrayList<Integer>> movieUserMapByGenre = new HashMap<Integer,ArrayList<Integer>>();
 		
 		Map<Integer,Movie> movieMap = new HashMap<Integer,Movie>();
 		List<Integer>movieIdListByGenre = new ArrayList<Integer>();
@@ -65,12 +65,16 @@ public class MovieBuff {
 			{
 				int movieId = k.getMovieId();
 				movieIdListByGenre.add(movieId);
-				System.out.println(movieId);
 			}
 		}
 		return movieIdListByGenre;
 	}
-	
+	/**
+	 * 
+	 * @param movieIdList = this parameter is passed to getTopMovieRatingName
+	 * @return String = it return the string (Movie Name) which has the highest rating 
+	 * 					among the given genre
+	 */
 	public String getTopMovieRatingName(List<Integer> movieIdList) {
 		List<Rating> ratingList = movieDb.getRatingList();
 		int maxRatingMovieId = 0;

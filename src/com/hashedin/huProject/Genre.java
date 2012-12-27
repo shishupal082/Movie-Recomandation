@@ -1,5 +1,9 @@
 package com.hashedin.huProject;
-
+/**
+ * 
+ * @author shishupal
+ *In this file Each Genre Match to a unique Id
+ */
 public enum Genre {
 	UNKNOWN(0),
 	ACTION(1),
